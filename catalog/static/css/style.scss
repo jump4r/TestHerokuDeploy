@@ -1,0 +1,177 @@
+$font-stack: Roboto, sans-serif;
+$primary-color: white;
+$accent-color: #ff9681;
+$bg-color: #222;
+
+$img-size: 300px;
+
+html, body {
+    margin: 0;
+    font-family: $font-stack;
+}
+
+p {
+    padding: 5px;
+    margin: 0;
+}
+
+
+.header {
+    color: $primary-color;
+    background-color: $bg-color;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.header-links {
+    text-align: right;
+    display: inline-flex;
+    position: relative;
+    top: 50%;
+}
+
+.header-link {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.header-title {
+    font-size: 50px;
+    text-decoration: none;
+    color: $primary-color;
+}
+
+.header-element {
+    margin: 20px;
+    font-size: 25px;
+}
+
+#filter-wrapper {
+    color: $primary-color;
+    background-color: $accent-color;
+
+    #filter-form {
+        display: none;
+
+        .filter-field-wrapper {
+            margin: 0 auto;
+            text-align: center;
+            vertical-align: bottom;
+
+            .filter-field {
+                display: inline-block;  
+                margin: 0;
+                padding: 5px;
+            }
+
+            #filter-bookmarks {
+                display: inline-block;
+                padding-left: 20px;
+                max-width: 20%;
+                vertical-align: bottom;
+
+                #filter-bookmark-icon {
+                    display: inline;
+                    vertical-align: text-bottom;
+                    width: 32px;
+                    height: 32px;
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    
+                }
+           }
+        }
+        
+        #filter-submit-wrapper {
+            text-align: center;
+            padding: 15px;
+        }
+    }
+
+    #filter-title {
+        text-align: center;
+        font-size: 2.35em;
+    
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+#app-wrapper {
+    width: 100%;
+
+    #app {
+        padding: 30px 0;
+    }
+}
+
+#review-list-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.review-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px;
+    max-width: $img-size;
+
+    .review-image-wrapper {
+        background-color: gray;
+        max-height: $img-size;
+        
+        .review-image {
+            width: $img-size;
+            height: $img-size;
+            object-fit: cover;
+        }
+
+        .bookmark-icon {
+            width: 32px;
+            height: 32px;
+            z-index: 1;
+            position: relative;
+            bottom: 295px;
+            left: 260px;
+            overflow: hidden;
+        }
+    }
+
+    .review-text-wrapper {
+        max-width: $img-size;
+        border-bottom: 1px solid gray;
+        border-left: 1px solid gray;
+        border-right: 1px solid gray;
+    }
+
+    .review-item-title {
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    .review-meta > * {
+        display: inline-block;
+        font-size: 0.75em;
+    }
+
+    .review-info > * {
+        display: inline-block;
+    }
+}
+
+#pagination {
+    background-color: $bg-color;
+    color: $primary-color;
+    width: 100%;
+    padding: 30px 0;
+    font-size: 1.35em;
+    text-align: center;
+
+    .previous-page, .next-page {
+        color: $primary-color;
+    }
+}

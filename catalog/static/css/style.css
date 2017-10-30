@@ -1,0 +1,122 @@
+html, body {
+  margin: 0;
+  font-family: Roboto, sans-serif; }
+
+p {
+  padding: 5px;
+  margin: 0; }
+
+.header {
+  color: white;
+  background-color: #222;
+  width: 100%;
+  padding: 20px 0;
+  text-align: center; }
+
+.header-links {
+  text-align: right;
+  display: inline-flex;
+  position: relative;
+  top: 50%; }
+
+.header-link {
+  color: white;
+  text-decoration: none; }
+
+.header-title {
+  font-size: 50px;
+  text-decoration: none;
+  color: white; }
+
+.header-element {
+  margin: 20px;
+  font-size: 25px; }
+
+#filter-wrapper {
+  color: white;
+  background-color: #ff9681; }
+  #filter-wrapper #filter-form {
+    display: none; }
+    #filter-wrapper #filter-form .filter-field-wrapper {
+      margin: 0 auto;
+      text-align: center;
+      vertical-align: bottom; }
+      #filter-wrapper #filter-form .filter-field-wrapper .filter-field {
+        display: inline-block;
+        margin: 0;
+        padding: 5px; }
+      #filter-wrapper #filter-form .filter-field-wrapper #filter-bookmarks {
+        display: inline-block;
+        padding-left: 20px;
+        max-width: 20%;
+        vertical-align: bottom; }
+        #filter-wrapper #filter-form .filter-field-wrapper #filter-bookmarks #filter-bookmark-icon {
+          display: inline;
+          vertical-align: text-bottom;
+          width: 32px;
+          height: 32px; }
+          #filter-wrapper #filter-form .filter-field-wrapper #filter-bookmarks #filter-bookmark-icon:hover {
+            cursor: pointer; }
+    #filter-wrapper #filter-form #filter-submit-wrapper {
+      text-align: center;
+      padding: 15px; }
+  #filter-wrapper #filter-title {
+    text-align: center;
+    font-size: 2.35em; }
+    #filter-wrapper #filter-title:hover {
+      cursor: pointer; }
+
+#app-wrapper {
+  width: 100%; }
+  #app-wrapper #app {
+    padding: 30px 0; }
+
+#review-list-wrapper {
+  width: 90%;
+  margin: 0 auto; }
+
+.review-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  max-width: 300px; }
+  .review-wrapper .review-image-wrapper {
+    background-color: gray;
+    max-height: 300px; }
+    .review-wrapper .review-image-wrapper .review-image {
+      width: 300px;
+      height: 300px;
+      object-fit: cover; }
+    .review-wrapper .review-image-wrapper .bookmark-icon {
+      width: 32px;
+      height: 32px;
+      z-index: 1;
+      position: relative;
+      bottom: 295px;
+      left: 260px;
+      overflow: hidden; }
+  .review-wrapper .review-text-wrapper {
+    max-width: 300px;
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray; }
+  .review-wrapper .review-item-title {
+    text-align: center;
+    font-size: 1.5em; }
+  .review-wrapper .review-meta > * {
+    display: inline-block;
+    font-size: 0.75em; }
+  .review-wrapper .review-info > * {
+    display: inline-block; }
+
+#pagination {
+  background-color: #222;
+  color: white;
+  width: 100%;
+  padding: 30px 0;
+  font-size: 1.35em;
+  text-align: center; }
+  #pagination .previous-page, #pagination .next-page {
+    color: white; }
+
+/*# sourceMappingURL=style.css.map */

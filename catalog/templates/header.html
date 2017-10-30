@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>1:1 Review Aggregator</title>
+        <meta charset='utf-8' />
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+        <!-- <script rel='text/javascript' src="{% static 'js/app.js' %}"></script> -->
+    </head>
+    <body>
+        <div class="header">
+            <div>
+                <a class="header-title" href='http://localhost:8000/'>1:1 Rep Reviews</a>
+            </div>
+            <div class="header-links">
+                <div class="header-element">
+                    <a class='header-link' href="#">About</a>
+                </div>
+                <div class="header-element">
+                    <a class='header-link' href="#">Reps</a>
+                </div>
+                <div class="header-element">
+                    <a class='header-link' href="http://www.github.com/jump4r">Source</a>
+                </div>
+            </div>
+        </div>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
