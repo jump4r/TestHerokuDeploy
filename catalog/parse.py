@@ -48,7 +48,7 @@ def parse_review(split_review, post):
         row_start_index = row_num
         total_columns = len(split_post_row) # Because people are gonna separate their shit weird
         for index, label in enumerate   (split_post_row):
-            for keyword_set in keywords.header_keywords:
+            for keyword_set in catalog.keywords.header_keywords:
                 # pprint ((label, " - ", keyword_set))
                 if (label.lower().strip() in keyword_set):
                     ordered_header[keyword_set[0]] = index

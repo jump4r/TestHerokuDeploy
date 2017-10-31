@@ -75,7 +75,7 @@ class Streamer:
             if (review_start_index == -1 or review_end_index == -1):
                 return []
 
-            r_list = parse.parse_review(split_selftext[review_start_index:review_end_index+1], p)
+            r_list = catalog.parse.parse_review(split_selftext[review_start_index:review_end_index+1], p)
             for r in r_list:
                 p.review_set.create(user=r.user, date=post.created, itemName=r.itemName, itemLink=r.itemLink, itemReview=r.itemReview, itemSize=r.itemSize, itemPic=r.itemPic)
 
