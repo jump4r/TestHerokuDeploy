@@ -1,5 +1,5 @@
 from pprint import pprint
-import parse, keywords
+import catalog.parse, catalog.keywords
 import praw
 import os, sys
 import django

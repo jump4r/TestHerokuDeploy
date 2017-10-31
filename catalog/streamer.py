@@ -3,7 +3,7 @@ import django
 import sys, os, time
 sys.path.append('\\'.join([os.path.dirname(os.path.abspath(__file__)), '..\\..']))
 sys.path.append('\\'.join([os.path.dirname(os.path.abspath(__file__)), '..']))
-import parse, keywords
+import catalog.parse, catalog.keywords
 import praw
 import threading
 

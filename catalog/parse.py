@@ -1,6 +1,6 @@
 from pprint import pprint
 import datetime, re
-import keywords
+import catalog.keywords
 
 def parse_reddit_link(reddit_link):
     if (reddit_link[0:4] == "http"):
