@@ -32,7 +32,7 @@ except:
 # DEBUG = True
 DEBUG = True #bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['intense-river-64521.herokuapp.com', 'localhost']
 
 
 # Application definition
