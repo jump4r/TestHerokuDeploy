@@ -17,11 +17,11 @@ class Streamer:
 
     def login(self):
         try: 
-            import reddit_config
-            username = os.environ.get("REDDIT_USERNAME", reddit_config.username)
-            password = os.environ.get('REDDIT_PASSWORD', reddit_config.password)
-            client = os.environ.get('REDDIT_CLIENT_ID', reddit_config.client_id)
-            secret = os.environ.get('REDDIT_CLIENT_SECRET', reddit_config.client_secret)
+            import catalog.reddit_config
+            username = os.environ.get("REDDIT_USERNAME", catalog.reddit_config.username)
+            password = os.environ.get('REDDIT_PASSWORD', catalog.reddit_config.password)
+            client = os.environ.get('REDDIT_CLIENT_ID', catalog.reddit_config.client_id)
+            secret = os.environ.get('REDDIT_CLIENT_SECRET', catalog.reddit_config.client_secret)
         except: 
             username = os.environ.get("REDDIT_USERNAME")
             password = os.environ.get('REDDIT_PASSWORD')
