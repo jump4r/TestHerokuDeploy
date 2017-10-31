@@ -108,3 +108,4 @@ ENV/
 
 #Config
 config.py
+reddit_config.py
