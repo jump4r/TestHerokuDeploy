@@ -8,4 +8,4 @@ class CatalogConfig(AppConfig):
     from streamer import Streamer
 
     s = Streamer()
-    s.stream()
+    # s.stream()
