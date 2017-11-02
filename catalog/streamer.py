@@ -85,13 +85,13 @@ if __name__ == "__main__":
     django.setup()
 
     try:
-        from webapp.models import Post, Review
+        from catalog.models import Post, Review
         streamer = Streamer()
         reddit = streamer.login()
         stream_thread = threading.Thread(target=streamer.get_from_stream, args=(reddit, ))
         stream_thread.start()
         
     except django.core.exceptions.AppRegistryNotReady:
-        print('Cannot Load Models because the models are not ready')
+        print('Cannot Load Models because the aps is not ready')
 
     print('We are in the best thread')

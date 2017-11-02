@@ -1,10 +1,10 @@
 from pprint import pprint
-import catalog.parse, catalog.keywords
 import praw
 import os, sys
 import django
 sys.path.append('\\'.join([os.path.dirname(os.path.abspath(__file__)), '..\\..']))
 sys.path.append('\\'.join([os.path.dirname(os.path.abspath(__file__)), '..']))
+import catalog.parse, catalog.keywords
 from RepReviews import settings
 
 def login():
@@ -20,7 +20,7 @@ def login():
         client = os.environ.get('REDDIT_CLIENT_ID')
         secret = os.environ.get('REDDIT_CLIENT_SECRET')
 
-     r = praw.Reddit(username=username,
+    r = praw.Reddit(username=username,
                 password=password,
                 client_id=client,
                 client_secret=secret,
@@ -35,7 +35,7 @@ def get_reviews(reddit):
         print('Cannot Load Models because the models are not ready')
         return False
 
-    for post in reddit.subreddit("fashionreps").hot(limit=15):
+    for post in reddit.subreddit("jump4r").hot(limit=15):
         print(post.title)
         scrape_post(post)
 
