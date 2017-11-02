@@ -26,7 +26,7 @@ def load_posts():
             print('Object already in database')
             return
         except:
-            pass
+            print('Adding post ' + _id + ' by ' + user + ' to database')
 
         p = Post(user=user, date=date, link=link, id=_id, title=title)
         p.save()
@@ -56,6 +56,7 @@ def load_reviews():
             return
 
         p.review_set.create(user=user, date=int(date), itemName=item, itemLink=link, itemReview=review, itemSize=size, itemPic=pic)
+        print ('Addition Success')
 
 if __name__ == "__main__":
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RepReviews.settings')
