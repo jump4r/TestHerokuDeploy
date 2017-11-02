@@ -23,7 +23,7 @@ def load_posts():
         
         try:
             p_exists = Post.objects.get(id=_id)
-            print('Object already in database')
+            print('Post with id ' + _id + ' already in database')
             return
         except:
             print('Adding post ' + _id + ' by ' + user + ' to database')
