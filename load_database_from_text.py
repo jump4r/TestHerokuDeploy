@@ -21,6 +21,13 @@ def load_posts():
         title = s[3][1:len(s[3])-1]
         date = s[4][1:len(s[4])-1]
         
+        try:
+            p_exists = Post.objects.get(id=_id)
+            print('Object already in database')
+            return
+        except:
+            pass
+
         p = Post(user=user, date=date, link=link, id=_id, title=title)
         p.save()
         
