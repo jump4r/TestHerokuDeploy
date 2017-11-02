@@ -1,6 +1,63 @@
 {% extends "header.html" %}
+{% load staticfiles %}
 
 {% block content %}
-    <h1>Hello Heroku</h1>
-    <h2>Reviews: {{ num_reviews }}</h2>
+<div id='filter-wrapper'>
+    <p id='filter-title'>
+        Show Filter
+    </p>   
+    <form method='GET' id='filter-form'>
+        <div class='filter-field-wrapper'>
+            <label for='user'>User:</label>
+            <input id='user' name='user' value='{{ request.user }}' class='filter-field' />
+            <label for='item'>Item:</label>
+            <input id='item' name='item' value='{{ request.item }}' class='filter-field' />
+            <div id='filter-bookmarks'>
+                <label for='ids'>Filter By Bookmarks</label>
+                <input name='ids' value="" type='hidden' id='filter-bookmark-input'/>
+                <img id='filter-bookmark-icon' src="{% if bookmarks_only %} 
+                                                        {% static 'icons/heartfull.png' %}
+                                                    {% else %}
+                                                        {% static 'icons/heartempty.png' %}
+                                                    {% endif %}" />
+            </div>
+        </div>
+        <div id='filter-submit-wrapper'>
+            <button type='submit' id='filter-submit'>Submit</button>
+        </div>
+    </form>
+</div>
+<div id='app-wrapper'>
+    <div id='app'>
+        <div id='review-list-wrapper'>
+            {% include "includes/app.html" %}
+        </div>
+    </div>
+
+    {% if reviews.has_other_pages %}
+    <div id='pagination'>
+        <span class='step-links'>
+            {% if reviews.has_previous %}
+                {% if not is_filtered %}
+                   <a class='previous-page' href='?page={{ reviews.previous_page_number }}'>Previous</a>
+                {% elif is_filtered %} 
+                    <a class='previous-page' href='{{ query }}page={{ reviews.previous_page_number }}'>Previous</a>
+                {% endif %}
+
+            {% endif %}
+
+            <span class='current'>
+                Page {{ reviews.number }}  of {{ reviews.paginator.num_pages }}
+            </span>
+            {% if reviews.has_next %}
+                {% if not is_filtered %}
+                    <a class='next-page' href='?page={{ reviews.next_page_number }}'>Next</a>
+                {% elif is_filtered %} 
+                    <a class='next-page' href='{{ query }}page={{ reviews.next_page_number }}'>Next</a>
+                {% endif %}
+            {% endif %}
+        </span>
+    </div>
+    {% endif %}
+</div>
 {% endblock %}

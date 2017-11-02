@@ -1,0 +1,34 @@
+{% load staticfiles %}
+{% block second %}
+    {% for r in reviews %}
+        <div id='{{ r.id }}' class='review-wrapper'>
+            <div class='review-image-wrapper'>
+                <img class='review-image' src='{{ r.itemPic }}'>
+                <img class='bookmark-icon' src="{% static 'icons/heartempty.png' %}">
+            </div>
+            <div class='review-text-wrapper'>
+                <div class='review-item-title'>
+                    <p>{{ r.itemName }}</p>
+                </div>
+                <div class='review-meta'>
+                    <p class='review-meta-element'>By:
+                        <a href='https://www.reddit.com/user/{{ r.post.user }}'>{{ r.post.user }}</a>
+                    </p>
+                    <p class='review-meta-element'>Posted: {{ r.post.date }}</p>
+                    <p class='review-meta-element'>
+                        <a href='{{　r.post.link　}}'>Reddit</a>
+                    </p>
+                </div>
+                <div class='review-info'>
+                    <p class='review-info-element item-link'>
+                        <a href='{{r.itemLink}}'>W2C</a>
+                    </p>
+                    <p class='review-info-element item-size'>Size: {{ r.itemSize }}</p>
+                </div>
+                <div class='review-content'>
+                    <p>{{ r.itemReview }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock%}
