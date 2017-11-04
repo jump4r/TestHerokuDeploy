@@ -1,0 +1,27 @@
+{% extends "header.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class='about-content about-header'>What is this?</div>
+    <p class='about-content about-content-block'>TB Reviews is a review aggregate site which scrapes reddit content for reviews on clothes purchased on e-commerce site <a href='https://www.taobao.com'>Taobao</a>. Reddit users
+    will post their reviews, and they are gathered here and displayed in a format that is both searchable, and easier to view.</p>
+    <div class='about-content about-header'>Functionality</div>
+    <p class='about-content about-content-block'>If you would like your review to be added to this site, you should post in the following format.</p>
+    <ol class='about-content'>
+        <li>First, create a HEADER by separating each column title with the &ldquo;|&rdquo; (Shift + \) character. You can title them in any order you like. Currently the following header tags are supported:
+            <b>Item Name, Size, Link, Pic, Review.</b>
+        </li>
+        <li>
+            Next, fill your second line with &ldquo;:--&rdquo; tag for each header element. You should also seperate these with the &ldquo;|&rdquo; character
+        </li>
+        <li>Finally, fill the rows with your reviews.</li>
+    </ol>
+    <p class='about-content about-content-block'><b>Please Note:</b> For the 'Pic' tag, please link a DIRECT image to ONE (preferably imgur) picture of your item, as the scraper is
+                                                    not designed to go through imgur albums. If you would like to add your review and an album to your reddit post, please title the 
+                                                    column header something other than 'Pic'. Titles such as 'Album' or 'Fit Pics' should work fine. The result should look something similar to the photo
+                                                    below</p>
+    <div class='about-content'>
+        <img class='about-table-example' src="{% static 'pics/table-example.png' %}" />
+    </div>
+
+{% endblock %}

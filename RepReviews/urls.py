@@ -20,8 +20,11 @@ from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
 
+from . import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^catalog/', include('catalog.urls')),
+    url(r'^about/',  views.about, name='about'),
     url(r'^$', include('catalog.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
