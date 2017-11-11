@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['tbreviews.herokuapp.com', 'localhost']
 
 INSTALLED_APPS = [
     'catalog.apps.CatalogConfig',
+    'background_task',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

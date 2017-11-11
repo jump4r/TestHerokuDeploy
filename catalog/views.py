@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import sys, os
+import catalog.scraper, catalog.timer
 from pprint import pprint
 from .models import Post, Review
 
@@ -53,6 +54,8 @@ class AppView(TemplateView):
 
     def get(self, request):
         
+        catalog.scraper.check_to_scrape_post()
+
         args = { }
 
         args['user'] = request.GET.get('user') if (request.GET.get('user') != None) else ''   

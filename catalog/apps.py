@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+#from background_task import background
 import os, sys
 
 class CatalogConfig(AppConfig):
